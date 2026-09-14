@@ -1,5 +1,3 @@
 <Solution>
-  <Folder Name="/src/">
-    <Project Path="src/BulkDataProcessingPlatform.Api/BulkDataProcessingPlatform.Api.csproj" />
-  </Folder>
+  <Project Path="BulkDataProcessingPlatform.Api.csproj" />
 </Solution>

@@ -1,7 +1,7 @@
 using BulkDataProcessingPlatform.Api.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace BulkDataProcessingPlatform.Api.data;
+namespace BulkDataProcessingPlatform.Api.Data;
 
 public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 {

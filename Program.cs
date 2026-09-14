@@ -1,6 +1,6 @@
 using System.Text;
 using BulkDataProcessingPlatform.Api;
-using BulkDataProcessingPlatform.Api.data;
+using BulkDataProcessingPlatform.Api.Data;
 using BulkDataProcessingPlatform.Api.OpenApi;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
