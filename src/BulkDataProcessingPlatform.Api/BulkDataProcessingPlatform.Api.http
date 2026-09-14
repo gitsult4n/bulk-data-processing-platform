@@ -1,0 +1,6 @@
+@BulkDataProcessingPlatform.Api_HostAddress = http://localhost:5276
+
+GET {{BulkDataProcessingPlatform.Api_HostAddress}}/
+Accept: application/json
+
+###
