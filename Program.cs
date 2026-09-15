@@ -1,8 +1,11 @@
 using System.Text;
 using BulkDataProcessingPlatform.Api;
 using BulkDataProcessingPlatform.Api.Data;
+using BulkDataProcessingPlatform.Api.Entities;
 using BulkDataProcessingPlatform.Api.OpenApi;
+using BulkDataProcessingPlatform.Api.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
@@ -15,6 +18,9 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi(o => o.AddDocumentTransformer<BearerSecuritySchemeTransformer>());
 builder.Services.AddDbContext<AppDbContext>(o =>
     o.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddSingleton<IPasswordHasher<User>, PasswordHasher<User>>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 var jwt = builder.Configuration.GetSection("Jwt");
 var signingKey = jwt["Key"] ?? throw new InvalidOperationException("Jwt:Key is not configured.");
